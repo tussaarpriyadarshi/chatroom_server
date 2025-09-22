@@ -1,0 +1,58 @@
+// {
+//     "version": "2.0.0",
+//     "tasks": [
+//         {
+//             "label": "Build and Run C++ File",
+//             "type": "shell",
+//             "command": "g++",
+//             "args": [
+//                 "${file}",
+//                 "-o",
+//                 "${fileDirname}/${fileBasenameNoExtension}"
+//             ],
+//             "group": {
+//                 "kind": "build",
+//                 "isDefault": true
+//             },
+//             "problemMatcher": ["$gcc"],
+//             "detail": "Compile and Run C++"
+//         },
+//         {
+//             "label": "Run Executable",
+//             "type": "shell",
+//             "command": "${fileDirname}/${fileBasenameNoExtension}",
+//             "group": {
+//                 "kind": "test",
+//                 "isDefault": true
+//             }
+//         }
+//     ]
+// }
+{
+    "configurations": [
+
+        {
+        "name": "(gdb) Launch",
+        "type": "cppdbg",
+        "request": "launch",
+        "program": "${workspaceFolder}/chatApp",
+        "args": [],
+        "stopAtEntry": false,
+        "cwd": "${fileDirname}",
+        "environment": [],
+        "externalConsole": false,
+        "MIMode": "gdb",
+        "setupCommands": [
+            {
+                "description": "Enable pretty-printing for gdb",
+                "text": "-enable-pretty-printing",
+                "ignoreFailures": true
+            },
+            {
+                "description": "Set Disassembly Flavor to Intel",
+                "text": "-gdb-set disassembly-flavor intel",
+                "ignoreFailures": true
+            }
+        ]
+    }]
+}
