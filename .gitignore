@@ -1,0 +1,13 @@
+# Ignore VS Code settings
+.vscode/
+
+# Ignore build artifacts
+*.o
+*.out
+*.exe
+
+# Ignore Makefile if you don’t want it in repo
+Makefile
+
+# Ignore logs
+*.log
